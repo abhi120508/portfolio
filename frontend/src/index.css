@@ -1,0 +1,15 @@
+/* App.css */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+}
