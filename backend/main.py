@@ -47,3 +47,8 @@ async def send_email(data: ContactForm):
         return {"success": True, "message": "Email sent successfully."}
     except Exception as e:
         return {"success": False, "error": str(e)}
+
+# Add this at the bottom of your file
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=10000, reload=True)
