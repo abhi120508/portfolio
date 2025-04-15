@@ -42,7 +42,7 @@ const Contact = () => {
     severity: "success",
   });
 
-  const postmanAudio = new Audio("/postman_bell.mp3");
+  const postmanAudio = new Audio(`${process.env.PUBLIC_URL}/postman_bell.mp3`);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -252,7 +252,7 @@ const Contact = () => {
           >
             {isSubmitted && !postmanExited && (
               <img
-                src="/postman.png"
+                src={`${process.env.PUBLIC_URL}/postman.png`}
                 alt="Postman"
                 style={{
                   position: "absolute",

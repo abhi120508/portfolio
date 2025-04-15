@@ -49,10 +49,8 @@ export default function Navbar() {
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between", padding: "0 1rem" }}>
-          {/* Clickable Logo - links to Hero section */}
+          {/* Logo/Image */}
           <Box
-            component="a"
-            href="#hero"
             sx={{
               height: "80px",
               width: "80px",
@@ -60,7 +58,6 @@ export default function Navbar() {
               alignItems: "center",
               justifyContent: "center",
               marginLeft: "8px",
-              textDecoration: "none",
             }}
           >
             <img
