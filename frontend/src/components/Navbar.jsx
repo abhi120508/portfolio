@@ -49,27 +49,34 @@ export default function Navbar() {
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between", padding: "0 1rem" }}>
-          {/* Logo/Image */}
-          <Box
-            sx={{
-              height: "80px",
-              width: "80px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginLeft: "8px",
-            }}
-          >
-            <img
-              src={process.env.PUBLIC_URL + "/logo.png"}
-              alt="Logo"
-              style={{
-                height: "100%",
-                width: "auto",
-                display: "block",
+          {/* Logo - Scroll to Hero */}
+          <a href="#hero" style={{ textDecoration: "none" }}>
+            <Box
+              sx={{
+                height: "80px",
+                width: "80px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginLeft: "8px",
+                cursor: "pointer",
+                transition: "transform 0.2s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
               }}
-            />
-          </Box>
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/logo.png"}
+                alt="Logo"
+                style={{
+                  height: "100%",
+                  width: "auto",
+                  display: "block",
+                }}
+              />
+            </Box>
+          </a>
 
           {/* Desktop Navigation Links */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
