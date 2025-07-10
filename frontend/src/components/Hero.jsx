@@ -39,13 +39,31 @@ export default function Hero() {
     setResumeModalOpen(false);
   };
 
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/Abhishek_DS_Resume.pdf";
-    link.download = "Abhishek_DS_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = async () => {
+    try {
+      const pdfUrl = process.env.PUBLIC_URL + "/Abhishek_DS_Resume.pdf";
+
+      // Try to fetch the file first to ensure it exists
+      const response = await fetch(pdfUrl);
+      if (!response.ok) {
+        throw new Error("PDF file not found");
+      }
+
+      // Create download link
+      const link = document.createElement("a");
+      link.href = pdfUrl;
+      link.download = "Abhishek_DS_Resume.pdf";
+      link.target = "_blank";
+
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Download failed:", error);
+      // Fallback: open in new tab
+      window.open(process.env.PUBLIC_URL + "/Abhishek_DS_Resume.pdf", "_blank");
+    }
   };
 
   return (
